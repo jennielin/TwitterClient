@@ -19,7 +19,7 @@ This is a simple Twitter client app powered by the Twitter RESTful API.  Please
 * [x] Optional: User can see a counter with total number of characters left for tweet
 
 
-![GIF Walkthrough]()
+![GIF Walkthrough](https://cloud.githubusercontent.com/assets/929507/6544527/2f0b6efc-c509-11e4-9de0-d289400f1e94.gif)
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
