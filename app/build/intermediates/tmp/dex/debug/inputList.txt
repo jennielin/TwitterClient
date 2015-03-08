@@ -1,0 +1,11 @@
+C:\Users\Pleasure\AndroidStudioProjects\MySimpleTweets\app\build\intermediates\classes\debug
+C:\Users\Pleasure\AndroidStudioProjects\MySimpleTweets\app\build\intermediates\pre-dexed\debug\support-annotations-21.0.0-3fda30f9ef7af21e3422810c98e1a368b48d01c1.jar
+C:\Users\Pleasure\AndroidStudioProjects\MySimpleTweets\app\build\intermediates\pre-dexed\debug\codepath-utils-c104ddf80bacf5e839bfd33cd53794971721e810.jar
+C:\Users\Pleasure\AndroidStudioProjects\MySimpleTweets\app\build\intermediates\pre-dexed\debug\codepath-oauth-0.4.1-02b4b2fe30cf795a71e5e52b2f73ceea54d2263f.jar
+C:\Users\Pleasure\AndroidStudioProjects\MySimpleTweets\app\build\intermediates\pre-dexed\debug\activeandroid-3.1.0-SNAPSHOT-608fd0fd93cd86648716c2f48bdee40bfb11d099.jar
+C:\Users\Pleasure\AndroidStudioProjects\MySimpleTweets\app\build\intermediates\pre-dexed\debug\scribe-codepath-0.0.3-c31402b64051e280636eedc8d1a640ff737e85f6.jar
+C:\Users\Pleasure\AndroidStudioProjects\MySimpleTweets\app\build\intermediates\pre-dexed\debug\android-async-http-1.4.6-cf42f8030c9013b2f14c9c6f08eb4537babe27c2.jar
+C:\Users\Pleasure\AndroidStudioProjects\MySimpleTweets\app\build\intermediates\pre-dexed\debug\picasso-2.4.0-635024a3dec4bd72db65d998e329b23e67f3eeba.jar
+C:\Users\Pleasure\AndroidStudioProjects\MySimpleTweets\app\build\intermediates\pre-dexed\debug\internal_impl-21.0.0-742093295a7b2bb8edde589c5edb6a3ea333701b.jar
+C:\Users\Pleasure\AndroidStudioProjects\MySimpleTweets\app\build\intermediates\pre-dexed\debug\classes-f60bd6a3a62a552929aefbbaff3aff7862eae7d9.jar
+C:\Users\Pleasure\AndroidStudioProjects\MySimpleTweets\app\build\intermediates\pre-dexed\debug\classes-6af993031d77cab62a613612bf292df6801452fe.jar

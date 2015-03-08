@@ -1,0 +1,21 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.codepath.apps.mysimpletweets.ComposeActivity">
+
+
+    <item
+        android:id="@+id/miCancel"
+
+        android:showAsAction="ifRoom"
+        android:onClick="onCancel"
+        android:title="@string/cancel_title">
+    </item>
+    <item
+        android:id="@+id/miSend"
+
+        android:showAsAction="ifRoom"
+        android:onClick="onSend"
+        android:title="@string/send_title">
+    </item>
+</menu>
