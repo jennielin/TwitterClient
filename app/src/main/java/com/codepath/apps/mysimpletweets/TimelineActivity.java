@@ -1,34 +1,23 @@
 package com.codepath.apps.mysimpletweets;
 
-import android.app.Activity;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.widget.SwipeRefreshLayout;
+import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBarActivity;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.ListView;
-import android.widget.Toast;
 
-import com.codepath.apps.mysimpletweets.models.EndlessScrollListener;
-import com.codepath.apps.mysimpletweets.models.Tweet;
-import com.loopj.android.http.JsonHttpResponseHandler;
-
-import org.apache.http.Header;
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.util.ArrayList;
+import com.astuetz.PagerSlidingTabStrip;
+import com.codepath.apps.mysimpletweets.fragments.HomeTimelineFragment;
+import com.codepath.apps.mysimpletweets.fragments.MentionsTimelineFragment;
+import com.codepath.apps.mysimpletweets.fragments.TweetsListFragment;
 
 public class TimelineActivity extends ActionBarActivity {
-
-    private TwitterClient client;
-    private TweetsArrayAdapter aTweets;
-    private ArrayList<Tweet> tweets;
-    private ListView lvTweets;
     private static final int COMPOSE_ACTIVITY_REQUEST_CODE = 1;
+    private TweetsListFragment fragmentTweetsList;
 
 
     @Override
@@ -36,59 +25,14 @@ public class TimelineActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_timeline);
 
-        lvTweets = (ListView) findViewById(R.id.lvTweets);
-
-        tweets = new ArrayList<>();
-
-        aTweets = new TweetsArrayAdapter(this, tweets);
-        lvTweets.setAdapter(aTweets);
-
-        client = TwitterApplication.getRestClient();
-        populateTimeline(-1,-1);
-
-
-        lvTweets.setOnScrollListener(new EndlessScrollListener() {
-            @Override
-            public void onLoadMore(int page, int totalItemsCount) {
-                //customLoadMoreDataFromApi(page);
-                if (tweets.size() < 1) {
-                    populateTimeline(-1, -1);
-                } else {
-                    populateTimeline(-1, tweets.get(tweets.size() - 1).getUid() - 1);
-                }
-            }
-        });
-
-    }
-
-    private void populateTimeline(long since, long max) {
-        client.getHomeTimeline(new JsonHttpResponseHandler() {
-            public void onSuccess(int statusCode, Header[] headers,JSONArray jsonArray) {
-
-                // ...the data has come back, add new items to your adapter...
-
-                Log.d("DEBUG", "Array length" + jsonArray.length());
-                Log.d("DEBUG", jsonArray.toString());
-
-                aTweets.addAll(Tweet.fromJSONArray(jsonArray));
-            }
-
-            public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject e) {
-                Log.d("DEBUG", "Fetch timeline error: " + e.toString());
-            }
-        }, since, max);
-
-
-    }
-
-
-
-    public TwitterClient getClient() {
-        return client;
-    }
-
-    public void setClient(TwitterClient client) {
-        this.client = client;
+        // Get the viewpager
+        ViewPager vpPager = (ViewPager) findViewById(R.id.viewpager);
+        // Set the viewpager adapter for the pager
+        vpPager.setAdapter(new TweetsPagerAdapter(getSupportFragmentManager()));
+        /// Find the sliding tabstrip
+        PagerSlidingTabStrip tabStrip = (PagerSlidingTabStrip)findViewById(R.id.tabs);
+        // Attach the tabstrip to the viewpager
+        tabStrip.setViewPager(vpPager);
     }
 
 
@@ -107,23 +51,52 @@ public class TimelineActivity extends ActionBarActivity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.miCompose) {
-            Intent i = new Intent(this, ComposeActivity.class);
-            startActivityForResult(i, COMPOSE_ACTIVITY_REQUEST_CODE);
-            return true;
-        }
-
         return super.onOptionsItemSelected(item);
     }
 
 
-
-    public void fetchNewTweets() {
-        tweets.clear();
-        aTweets.notifyDataSetChanged();
-        populateTimeline(-1,-1);
+    public void onProfileView (MenuItem mi) {
+        // launch the profile view
+        Intent i = new Intent(this, ProfileActivity.class);
+        startActivity(i);
     }
+
+
+
+
+    // Return the order of the fragments in the view pager
+    public class TweetsPagerAdapter extends FragmentPagerAdapter {
+
+        private String tabTitles[] = {"Home", "Mentions"};
+
+        // How the adapter gets the manager to insert or remove fragments from activity
+        public TweetsPagerAdapter(FragmentManager fm) {
+            super(fm);
+        }
+
+        // controls the order and creation of fragments within the pager
+        @Override
+        public Fragment getItem(int position) {
+            if (position == 0) {
+                return new HomeTimelineFragment();
+            } else if (position == 1) {
+                return new MentionsTimelineFragment();
+            } else {
+                return null;
+            }
+        }
+
+        @Override
+        public CharSequence getPageTitle(int position) {
+            return tabTitles[position];
+        }
+
+        @Override
+        public int getCount() {
+            return tabTitles.length;
+        }
+    }
+
 
     public void onCompose(MenuItem mi) {
         Intent i = new Intent(this, ComposeActivity.class);
@@ -135,8 +108,10 @@ public class TimelineActivity extends ActionBarActivity {
 
         if (requestCode == COMPOSE_ACTIVITY_REQUEST_CODE &&
                 resultCode == RESULT_OK) {
-
-            fetchNewTweets();
+            HomeTimelineFragment f = (HomeTimelineFragment) getSupportFragmentManager().findFragmentByTag("home_timeline");
+            if (f != null) {
+                f.fetchNewTweets();
+            }
         }
     }
 }

@@ -11,7 +11,6 @@
     <string name="cancel_title">Cancel</string>
     <string name="send_title">Tweet</string>
     <string name="compose_edittext_hint">What\'s happening?</string>
-
-
+    <string name="title_activity_profile">Profile</string>
 
 </resources>

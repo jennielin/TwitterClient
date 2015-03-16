@@ -1,6 +1,7 @@
 package com.codepath.apps.mysimpletweets;
 
 import android.content.Context;
+import android.content.Intent;
 import android.text.format.DateUtils;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.codepath.apps.mysimpletweets.models.Tweet;
+import com.codepath.apps.mysimpletweets.models.User;
 import com.squareup.picasso.Picasso;
 
 import java.text.ParseException;
@@ -34,12 +36,8 @@ public class TweetsArrayAdapter extends ArrayAdapter<Tweet> {
     }
 
     public View getView(int position, View convertView, ViewGroup parent) {
-
         ViewHolder viewHolder;
-
-        Tweet tweet = getItem(position);
-
-
+        final Tweet tweet = getItem(position);
 
         if (convertView == null) {
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.item_tweet, parent, false);
@@ -61,6 +59,8 @@ public class TweetsArrayAdapter extends ArrayAdapter<Tweet> {
         viewHolder.ivProfileImage.setImageResource(android.R.color.transparent);
 
         Picasso.with(getContext()).load(tweet.getUser().getProfileImageUrl()).into(viewHolder.ivProfileImage);
+
+
 
         return convertView;
 

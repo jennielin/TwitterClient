@@ -18,6 +18,22 @@ This is a simple Twitter client app powered by the Twitter RESTful API.  Please
 * [x] User is taken back to home timeline with new tweet visible in timeline
 * [x] Optional: User can see a counter with total number of characters left for tweet
 
+## Week 4 User Stories
+* [x] Includes all required user stories from Week 3 Twitter Client
+* [x] User can switch between Timeline and Mention views using tabs.
+* [x] User can view their home timeline tweets.
+* [x] User can view the recent mentions of their username.
+* [x] User can navigate to view their own profile
+* [x] User can see picture, tagline, # of followers, # of following, and tweets on their profile.
+* [x] User can click on the profile image in any tweet to see another user's profile.
+* [x] User can see picture, tagline, # of followers, # of following, and tweets of clicked user.
+* [x] Profile view should include that user's timeline
+* [x] Optional: User can view following / followers list through the profile
+* [x] User can infinitely paginate any of these timelines (home, mentions, user) by scrolling to the bottom
+
+
+
+![Week 4 GIF Walkthrough](https://cloud.githubusercontent.com/assets/929507/6663452/f073ad40-cb83-11e4-8dcf-24f2122f595e.gif)
 
 ![GIF Walkthrough](https://cloud.githubusercontent.com/assets/929507/6544527/2f0b6efc-c509-11e4-9de0-d289400f1e94.gif)
 
@@ -30,6 +46,8 @@ This app leverages a few third-party libraries:
 
  * [Android AsyncHTTPClient](http://loopj.com/android-async-http/) - For asynchronous network requests
  * [Picasso](http://square.github.io/picasso/) - For remote image loading
+ 
+ * Week 4: compile 'com.astuetz:pagerslidingtabstrip:1.0.1'
 
 ## Development Environment
 
@@ -54,7 +72,23 @@ Make sure a Callback URL is entered, modify the settings to allow sign in, and c
 	* Solution: cursoring, read the timeline relative to the IDs of Tweets it has already processed.  First endpoint request has count only, then keep track the lowest ID received -1 as max_id.  Maintain highest since_id (non inclusive) ...
 
 * Code based on [android rest client template] (https://github.com/codepath/android-rest-client-template)
+
 *  OAuth login
+
+## Learning Steps Week 4
+
+* ViewPager 
+* [Advocating Against Android Fragments @piwai]
+(https://corner.squareup.com/2014/10/advocating-against-android-fragments.html)
+	* Most of our difficult crashes were related to the fragment lifecycle.
+	* We only need views to build a responsive UI, a backstack, and screen transitions.
+	* There is no need for new APIs; everything we needed was there from the very beginning: activities, views, and layout inflaters.
+	* [Fragment and Actvity Lifecycle](https://github.com/xxv/android-lifecycle)
+* https://dev.twitter.com/rest/reference/get/statuses/home_timeline
+
+
+
+
 
 ### final
 What is "final" keyword in Java? http://stackoverflow.com/questions/15655012/how-final-keyword-works

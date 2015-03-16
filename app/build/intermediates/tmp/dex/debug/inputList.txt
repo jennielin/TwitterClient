@@ -1,6 +1,7 @@
 C:\Users\Pleasure\AndroidStudioProjects\MySimpleTweets\app\build\intermediates\classes\debug
 C:\Users\Pleasure\AndroidStudioProjects\MySimpleTweets\app\build\intermediates\pre-dexed\debug\support-annotations-21.0.0-3fda30f9ef7af21e3422810c98e1a368b48d01c1.jar
 C:\Users\Pleasure\AndroidStudioProjects\MySimpleTweets\app\build\intermediates\pre-dexed\debug\codepath-utils-c104ddf80bacf5e839bfd33cd53794971721e810.jar
+C:\Users\Pleasure\AndroidStudioProjects\MySimpleTweets\app\build\intermediates\pre-dexed\debug\classes-a6e62c027d6a531c0920328811d8eef0d41268a4.jar
 C:\Users\Pleasure\AndroidStudioProjects\MySimpleTweets\app\build\intermediates\pre-dexed\debug\codepath-oauth-0.4.1-02b4b2fe30cf795a71e5e52b2f73ceea54d2263f.jar
 C:\Users\Pleasure\AndroidStudioProjects\MySimpleTweets\app\build\intermediates\pre-dexed\debug\activeandroid-3.1.0-SNAPSHOT-608fd0fd93cd86648716c2f48bdee40bfb11d099.jar
 C:\Users\Pleasure\AndroidStudioProjects\MySimpleTweets\app\build\intermediates\pre-dexed\debug\scribe-codepath-0.0.3-c31402b64051e280636eedc8d1a640ff737e85f6.jar
