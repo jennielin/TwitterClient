@@ -13,7 +13,7 @@ This is a simple Twitter client app powered by the Twitter RESTful API.  Please
 * [x] User can view more tweets as they scroll with infinite pagination
 * [x] Optional: Links in tweets are clickable and will launch the web browser (see autolink)
 * [x] User can compose a new tweet
-* [x] User can click a “Compose” icon in the Action Bar on the top right
+* [x] User can click a ï¿½Composeï¿½ icon in the Action Bar on the top right
 * [x] User can then enter a new tweet and post this to twitter
 * [x] User is taken back to home timeline with new tweet visible in timeline
 * [x] Optional: User can see a counter with total number of characters left for tweet
@@ -124,3 +124,10 @@ http://java67.blogspot.com/2014/11/difference-between-instance-and-object-in-jav
 http://math.hws.edu/javanotes/c5/s1.html
 
 Instance is memory allocation on the ram at particular moment. So if you think about instance you should immediately ask the question that instance of what? if instance is for class then it object. So in memory first instance is created and then object is created.
+
+### Other Resources
+* [Android Developers: Application Fundamentals](http://developer.android.com/guide/components/fundamentals.html#appcomp)
+* [A Birdï¿½s Eye View of Android System Services](http://www.opensourceforu.com/2013/12/birds-eye-view-android-system-services/)
+* [Anatomy of Android - Internals and externals and all in between](http://anatomyofandroid.com/2013/10/)
+* [Understanding Android: Zygote and DalvikVM](http://stackoverflow.com/questions/9153166/understanding-android-zygote-and-dalvikvm)
+
