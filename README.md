@@ -130,4 +130,5 @@ Instance is memory allocation on the ram at particular moment. So if you think a
 * [A Bird�s Eye View of Android System Services](http://www.opensourceforu.com/2013/12/birds-eye-view-android-system-services/)
 * [Anatomy of Android - Internals and externals and all in between](http://anatomyofandroid.com/2013/10/)
 * [Understanding Android: Zygote and DalvikVM](http://stackoverflow.com/questions/9153166/understanding-android-zygote-and-dalvikvm)
+* [What is Stock Android?](http://www.androidcentral.com/what-stock-android)
 
